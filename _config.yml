@@ -4,16 +4,17 @@
 
 # Site
 title: Siam博客
-subtitle: ''
+subtitle: '一个普通的程序员笔记站'
 description: ''
-keywords:
+keywords: 
 author: Siam
 language: zh-CN
 timezone: ''
+favicon: https://blog.siammm.cn/wp-content/uploads/2019/06/20190612032728575_easyicon_net_32.ico
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://blog.siammm.cn/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -103,7 +104,8 @@ theme: vexo
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/xuanyanwow/hexo-blog-html.git
 
 
 menu:
