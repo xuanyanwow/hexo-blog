@@ -34,7 +34,7 @@ telnet 127.0.0.1 9000
 
 逐个分析进程ID
 ``` sh
-# asklist|findstr "5428"
+# tasklist|findstr "5428"
 
 com.docker.backend.exe        5428 Console                    1     35,456 K
 ```
