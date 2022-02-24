@@ -1,3 +1,13 @@
+---
+title: docker端口映射失败排查
+tags:
+  - 容器
+id: '128'
+categories:
+  - 开发层
+date: 2022-2-22 14:19:45
+---
+
 # 前言
 
 win10下，docker启动了apisix dashboard容器，浏览器和CURL命令获取容器服务都`失败`, `curl http://127.0.0.1:9000`
