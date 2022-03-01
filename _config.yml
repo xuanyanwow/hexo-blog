@@ -108,16 +108,6 @@ deploy:
   type: git
   repo: https://github.com/xuanyanwow/hexo-blog-html.git
 
-
-menu:
- 首页: /
- #Series: /series/
- 标签: /tags/
- 归档: /archives/
- 项目: /project/
- 关于我: /about/
-
-
 search:
   path: search.xml
   field: post
