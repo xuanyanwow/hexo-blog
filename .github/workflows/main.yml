@@ -18,7 +18,8 @@ jobs:
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
         run: |
-          
+          git config --global user.email "59419979@qq.com"
+          git config --global user.name "Siam"
           # install dependencies
           npm i -g hexo-cli
           npm i
