@@ -1,37 +1,49 @@
-name: Deploy
+# workflow name
+name: Hexo Blog CI
 
-on: [push]
-
+# master branch on push, auto run
+on: 
+  push:
+    branches:
+      - main
+      
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: A job to deploy blog.
+  build: 
+    runs-on: ubuntu-latest 
+        
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+    # check it to your workflow can access it
+    # from: https://github.com/actions/checkout
+    - name: Checkout Repository master branch
+      uses: actions/checkout@master 
+      
+    # from: https://github.com/actions/setup-node  
+    - name: Setup Node.js 
+      uses: actions/setup-node@master
       with:
-        submodules: false # Checkout private submodules(themes or something else).
+        node-version: "17.5.0"
     
-    # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
-    - name: Cache node modules
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-    - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: npm ci
-    
-    # Deploy hexo blog website.
-    - name: Deploy
-      id: deploy
-      uses: sma11black/hexo-action@v1.0.4
-      with:
-        deploy_key: ${{ secrets.DEPLOY_KEY }}
-    # Use the output from the `deploy` step(use for test action)
-    - name: Get the output
+    - name: Setup Hexo Dependencies
       run: |
-        echo "${{ steps.deploy.outputs.notify }}"
+        npm install hexo-cli -g
+        npm install hexo-deployer-git --save
+        npm install
+    
+    - name: Setup Deploy Private Key
+      env:
+        INPUT_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$INPUT_DEPLOY_KEY" > ~/.ssh/id_rsa 
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+        
+    - name: Setup Git Infomation
+      run: | 
+        git config --global user.name "$INPUT_USER_NAME"
+        git config --global user.email "$INPUT_USER_EMAIL"
+    - name: Deploy Hexo 
+      run: |
+        hexo clean
+        hexo generate 
+        hexo deploy
