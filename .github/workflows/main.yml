@@ -40,8 +40,8 @@ jobs:
         
     - name: Setup Git Infomation
       run: | 
-        git config --global user.name "$INPUT_USER_NAME"
-        git config --global user.email "$INPUT_USER_EMAIL"
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
     - name: Deploy Hexo 
       run: |
         hexo clean
