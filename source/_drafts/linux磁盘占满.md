@@ -16,4 +16,4 @@ lsof | grep deleted
 比如一个inode需要占用2kb    那么疯狂创建1kb的图片文件， 几亿个   
 
 
-测试
+测试11
