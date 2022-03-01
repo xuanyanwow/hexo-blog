@@ -1,0 +1,95 @@
+author: yanm1ng # 作者
+description: yanm1ng's blog
+keyword: hexo-theme, vuejs
+
+excerpt_link: Read more
+
+menu:
+ 首页: /
+ #Series: /series/
+ 标签: /tags/
+ 归档: /archives/
+ 项目: /project/
+ 关于我: /about/
+ 友链: /friend/
+
+# highlight
+highlight:
+  tomorrow
+
+# catalog
+catalog: true
+
+# donate
+donate: false
+
+# qrcode
+qrcode: true
+
+# comment
+# you can set utterances, gitment, uyan or disqus
+comment: utterances
+
+# utterances config
+utterances_repo:                # e.g. GitHubAccount/RepoForUtterances
+utterances_issue_term: pathname # you can see other available options at 'https://utteranc.es/'
+utterances_theme: github-light  # you can see other available options at 'https://utteranc.es/'
+
+# gitment config
+gitment_owner: yanm1ng
+gitment_repo: yanm1ng.github.io
+gitment_oauth_id: 0f87e490e00ee3fd87ef
+gitment_oauth_secret: 4a9d2b148e7971c2201ad12131ce8bf8159ccd2e
+
+# uyan config
+# if you want to use uyan as your blog comment, plz remove/comment out gitment config
+baidu_id: 
+google_analytics: 
+# disqus config
+disqus_shortname: 
+
+about:
+  banner: ""
+  avatar: https://q1.qlogo.cn/g?b=qq&nk=59419979&src_uin=www.jlwz.cn&s=0
+  description: "<div style='text-align:left;max-width:500px;margin:0 auto;'><h2>您好</h2>
+欢迎来到我的博客，我是宣言(Siam)，98年生人。非常感谢在学习路上遇到的每一个人，无论是教导还是批评亦或是嘲讽。<br/>
+
+<h2>关于Siam</h2>
+程序员，主要方向：PHP、微信体系应用、后端架构<br/>
+EasySwoole开发组组员<br/>
+主要贡献：文档维护改版、带领文档维护团队、ORM组件主要参与维护者、FastCache组件主要参与维护者等<br/>
+业余绘画爱好者，希望能培养出发现美的眼睛<br/>
+
+<h2>路途遥远</h2>
+征途还在继续，期望能与您一同前行。<br/>
+技术交流、交流群吹水、思路探讨、外包接单。期待您添加我为好友。<br/>
+</div>"
+  weibo_username: 
+  twitter_username: 
+  github_username: xuanyanwow
+  qq: 59419979
+  zhihu_username: 
+  douban_username: 
+  linkedin_username: 
+
+# MathJax Support
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# Local Search Support
+local_search:
+  enable: true
+
+# China Registration
+# e.g. 京ICP备12345678号-1
+icp:
+  enable: false
+  number: 京ICP备12345678号-1 # e.g. 京ICP备12345678号-1
+# e.g. 京公网安备 12345678901234号
+ga:
+  enable: false
+  province: 京           # e.g. 京
+  number: 12345678901234 # e.g. 12345678901234
+
