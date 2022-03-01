@@ -1,0 +1,36 @@
+name: Build and Update blog.siammm.cn for github pages
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version: "17.5.0"
+
+      - name: Setup Hexo env
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+        run: |
+          # set up private key for deploy
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          # set git infomation
+          git config --global user.name 'siam'
+          git config --global user.email '59419979@qq.com'
+          # install dependencies
+          npm i -g hexo-cli
+          npm i
+
+      - name: Deploy
+        run: |
+          # generate and depoly
+          hexo clean && hexo deploy
