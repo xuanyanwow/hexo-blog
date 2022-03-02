@@ -106,7 +106,8 @@ theme: vexo
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:xuanyanwow/hexo-blog-html.git
+  repo: git@github.com:xuanyanwow/xuanyanwow.github.io.git
+  branch: gh-pages
 
 search:
   path: search.xml
