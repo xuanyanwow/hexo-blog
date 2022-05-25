@@ -2,7 +2,6 @@
 title: 宝塔的nginx,在Thinkphp伪静态情况下配置图片裁剪
 tags:
   - php
-id: 
 categories:
   - PHP
 date: 2022-5-23 19:37:32
