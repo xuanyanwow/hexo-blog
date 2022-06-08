@@ -12,4 +12,4 @@ date: 2022-6-8 11:37:16
 3. 在来源分支的git commit 上右键 点击[优选]
 
 
-![image-20220608115951710](./m1.png)
+![image-20220608115951710](/post_image/phpstorm_cherry-pick.png)
